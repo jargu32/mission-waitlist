@@ -118,11 +118,12 @@ const Navbar = () => {
                     height: 100%;
                     max-height: 45px;
                     object-fit: contain;
-                    filter: brightness(0) invert(0.95); /* Visible cream color on dark bg */
+                    filter: invert(1); /* Invert: white background -> black, dark text -> white */
+                    mix-blend-mode: screen; /* Make black background transparent */
                     transition: var(--transition);
                 }
                 .logo-img:hover {
-                    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(217, 119, 6, 0.4));
+                    filter: invert(1) brightness(1.2) drop-shadow(0 0 4px rgba(217, 119, 6, 0.6));
                 }
                 .nav-menu {
                     transition: var(--transition);
