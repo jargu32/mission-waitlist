@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProductShowcase from '../components/ProductShowcase';
+import OurStory from '../components/OurStory';
+import MissionImpact from '../components/MissionImpact';
+import MoreThanHoney from '../components/MoreThanHoney';
 import WaitlistForm from '../components/WaitlistForm';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const location = useLocation();
@@ -12,26 +17,28 @@ const Home = () => {
             const element = document.querySelector(location.hash);
             if (element) {
                 setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 100); // Small delay to ensure rendering
+                    const headerOffset = 90;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 150); // Small delay to ensure rendering
             }
         }
     }, [location]);
 
     return (
-        <main>
+        <main style={{ paddingTop: '90px' }}>
+            <Navbar />
             <Hero />
             <ProductShowcase />
+            <OurStory />
+            <MissionImpact />
+            <MoreThanHoney />
             <WaitlistForm />
-
-            <footer style={{
-                textAlign: 'center',
-                padding: '2rem',
-                color: 'rgba(255,255,255,0.3)',
-                fontSize: '0.875rem'
-            }}>
-                <p>&copy; {new Date().getFullYear()} Hola Honey. All rights reserved.</p>
-            </footer>
+            <Footer />
         </main>
     );
 };

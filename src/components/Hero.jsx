@@ -3,22 +3,24 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
-        <section className="hero">
+        <section id="top" className="hero">
             <div className="hero-overlay"></div>
             <div className="hero-content container">
                 <span className="brand-tag">Hola Honey</span>
                 <h1 className="mission-statement">
-                    Our mission is to create a <span className="text-gradient">Latino-owned</span> honey brand rooted in authentic ownership, ethical sourcing, and livable wages.
+                    Our mission is to build a <span className="text-gradient">Latino-owned</span> honey brand that creates consistent, dignified income for beekeepers and agricultural workers in Honduras.
                 </h1>
                 <p className="mission-sub">
-                    Ensuring the money we generate is reinvested back into the communities behind our product.
+                    Every jar connects pure Honduran honey with a bigger purpose: fair pay, ethical sourcing, and reinvestment in the communities behind it.
                 </p>
-                <button className="btn-primary" onClick={() => document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })}>
-                    Join the Movement
-                </button>
-                <Link to="/learn-more" className="btn-secondary">
-                    Learn More
-                </Link>
+                <div className="hero-buttons">
+                    <button className="btn-primary" onClick={() => document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })}>
+                        Join the Movement
+                    </button>
+                    <Link to="/learn-more" className="btn-secondary">
+                        Learn More
+                    </Link>
+                </div>
             </div>
 
             <style>{`
@@ -69,15 +71,25 @@ const Hero = () => {
                 .mission-sub {
                     font-size: clamp(1.125rem, 2vw, 1.5rem);
                     color: rgba(255, 255, 255, 0.8);
-                    max-width: 700px;
+                    max-width: 750px;
                     margin: 0 auto 40px;
                 }
+                .hero-buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+                }
                 @media (max-width: 600px) {
-                    .btn-secondary {
-                        margin-left: 0;
-                        margin-top: 16px;
-                        display: block;
+                    .hero-buttons {
+                        flex-direction: column;
                         width: 100%;
+                    }
+                    .hero-buttons .btn-primary,
+                    .hero-buttons .btn-secondary {
+                        width: 100%;
+                        margin: 0;
+                        text-align: center;
                     }
                 }
             `}</style>
