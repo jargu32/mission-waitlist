@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="hero-content container">
                 <span className="brand-tag">Hola Honey</span>
                 <h1 className="mission-statement">
-                    Our mission is to build a <span className="text-gradient">Latino-owned</span> honey brand that creates consistent, dignified income for beekeepers and agricultural workers in Honduras.
+                    Our mission is to build a <span className="text-gradient">Latino-owned</span> honey brand that creates <span className="text-gradient">consistent, dignified income</span> for beekeepers and workers in Honduras.
                 </h1>
                 <p className="mission-sub">
                     Every jar connects pure Honduran honey with a bigger purpose: fair pay, ethical sourcing, and reinvestment in the communities behind it.

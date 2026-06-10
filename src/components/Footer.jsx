@@ -65,6 +65,7 @@ const Footer = () => {
                     max-height: 40px;
                     width: fit-content;
                     object-fit: contain;
+                    filter: brightness(0) invert(0.95); /* Visible cream color on dark bg */
                 }
                 .footer-tagline {
                     color: var(--color-text-muted);

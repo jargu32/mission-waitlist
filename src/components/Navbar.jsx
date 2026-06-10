@@ -55,7 +55,7 @@ const Navbar = () => {
                         <li><a href="#story" onClick={(e) => handleNavClick(e, '#story')}>Our Story</a></li>
                         <li><a href="#mission" onClick={(e) => handleNavClick(e, '#mission')}>Mission & Impact</a></li>
                         <li><a href="#more-than-honey" onClick={(e) => handleNavClick(e, '#more-than-honey')}>More Than Honey</a></li>
-                        <li>
+                        <li className="mobile-only">
                             <a href="#waitlist" className="nav-cta btn-primary" onClick={(e) => handleNavClick(e, '#waitlist')}>
                                 Join Waitlist
                             </a>
@@ -63,15 +63,20 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                <button 
-                    className={`hamburger ${isOpen ? 'active' : ''}`} 
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle Navigation Menu"
-                >
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </button>
+                <div className="nav-actions">
+                    <a href="#waitlist" className="nav-cta btn-primary" onClick={(e) => handleNavClick(e, '#waitlist')}>
+                        Join Waitlist
+                    </a>
+                    <button 
+                        className={`hamburger ${isOpen ? 'active' : ''}`} 
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle Navigation Menu"
+                    >
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </button>
+                </div>
             </div>
 
             <style>{`
@@ -101,6 +106,7 @@ const Navbar = () => {
                     align-items: center;
                     justify-content: space-between;
                     width: 100%;
+                    position: relative;
                 }
                 .nav-logo {
                     display: flex;
@@ -112,9 +118,17 @@ const Navbar = () => {
                     height: 100%;
                     max-height: 45px;
                     object-fit: contain;
+                    filter: brightness(0) invert(0.95); /* Visible cream color on dark bg */
+                    transition: var(--transition);
+                }
+                .logo-img:hover {
+                    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(217, 119, 6, 0.4));
                 }
                 .nav-menu {
                     transition: var(--transition);
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
                 .nav-list {
                     list-style: none;
@@ -150,6 +164,15 @@ const Navbar = () => {
                     padding: 10px 24px !important;
                     font-size: 0.8rem !important;
                     box-shadow: none !important;
+                }
+                .nav-actions {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    z-index: 1001;
+                }
+                .mobile-only {
+                    display: none;
                 }
                 
                 /* Hamburger Menu */
@@ -189,6 +212,8 @@ const Navbar = () => {
                         position: fixed;
                         top: 0;
                         right: -100%;
+                        left: auto;
+                        transform: none;
                         width: 280px;
                         height: 100vh;
                         background: #191614;
@@ -211,6 +236,13 @@ const Navbar = () => {
                     .nav-cta {
                         width: 100%;
                         text-align: center;
+                    }
+                    .mobile-only {
+                        display: block;
+                        width: 100%;
+                    }
+                    .nav-actions .nav-cta {
+                        display: none;
                     }
                 }
             `}</style>
