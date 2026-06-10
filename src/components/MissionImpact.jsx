@@ -48,7 +48,7 @@ const MissionImpact = () => {
                     <div className="banner-content">
                         <span className="quote-icon">“</span>
                         <h4>
-                            A sustainable honey industry keeps hives active, preserves rural family livelihoods, and prevents families from having to abandon their homes in search of work.
+                            “When people value our honey, they also value the work, time, and care behind every hive.”
                         </h4>
                         <p className="banner-author">— The Beekeepers of Lempira</p>
                     </div>

@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <img src="/images/holahoneywordlogo.png" alt="Hola Honey" className="footer-logo" />
+                        <img src="/images/blackwordlogo.png" alt="Hola Honey" className="footer-logo" />
                         <p className="footer-tagline">Follow our journey from hive to jar.</p>
                     </div>
 
@@ -65,8 +65,7 @@ const Footer = () => {
                     max-height: 40px;
                     width: fit-content;
                     object-fit: contain;
-                    filter: invert(1); /* Invert: white background -> black, dark text -> white */
-                    mix-blend-mode: screen; /* Make black background transparent */
+                    mix-blend-mode: screen; /* Make black background transparent, keep gold text */
                 }
                 .footer-tagline {
                     color: var(--color-text-muted);

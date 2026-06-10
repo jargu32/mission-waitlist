@@ -45,7 +45,7 @@ const Navbar = () => {
         <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
                 <Link to="/" className="nav-logo" onClick={(e) => handleNavClick(e, '#top')}>
-                    <img src="/images/holahoneywordlogo.png" alt="Hola Honey LLC" className="logo-img" />
+                    <img src="/images/blackwordlogo.png" alt="Hola Honey LLC" className="logo-img" />
                 </Link>
 
                 <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -118,12 +118,11 @@ const Navbar = () => {
                     height: 100%;
                     max-height: 45px;
                     object-fit: contain;
-                    filter: invert(1); /* Invert: white background -> black, dark text -> white */
-                    mix-blend-mode: screen; /* Make black background transparent */
+                    mix-blend-mode: screen; /* Make black background transparent, keep gold text */
                     transition: var(--transition);
                 }
                 .logo-img:hover {
-                    filter: invert(1) brightness(1.2) drop-shadow(0 0 4px rgba(217, 119, 6, 0.6));
+                    filter: brightness(1.2) drop-shadow(0 0 4px rgba(217, 119, 6, 0.4));
                 }
                 .nav-menu {
                     transition: var(--transition);
